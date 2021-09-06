@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <% data.forEach(function(val){ %>
+       <h3><%= val.username %></h3>
+       <h3><%= val.name %></h3>
+      <p>Edit your name</p>
+       <form action=<%= '/edit/' + val._id %> method="post">
+        <input type="text" name="newname" placeholder="Enter new name">
+        <input type="submit" value="Submit">
+      </form>
+      <hr>
+       <a href= <%= '/delete/' + val._id  %> >Delete It</a>
+       <br>
+     <br>
+     <hr>
+     <hr>
+     <% }) %>
+     
+     
+</body>
+</html>
